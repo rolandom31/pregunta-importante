@@ -62,17 +62,88 @@ no_button.addEventListener('click', () => {
 });
 
 yes_button.addEventListener('click', () => {
-    // change banner gif path
     let banner = document.getElementById('banner');
     banner.src = "public/images/yes.gif";
     refreshBanner();
-    // hide buttons div
+
     let buttons = document.getElementsByClassName('buttons')[0];
     buttons.style.display = "none";
-    // show message div
+
     let message = document.getElementsByClassName('message')[0];
     message.style.display = "block";
+
+    startHeartsAnimation(); // Llamar la animación de corazones
 });
+
+function startHeartsAnimation() {
+    const container = document.getElementById('hearts-container');
+
+    for (let i = 0; i < 40; i++) { // Crea 40 corazones
+        let heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '🧡';
+        heart.style.color = "orange"; // Corazones naranjas
+        container.appendChild(heart);
+
+        let size = Math.random() * 30 + 10; // Tamaño aleatorio entre 10px y 40px
+        heart.style.fontSize = `${size}px`;
+
+        // Posición inicial aleatoria dentro del viewport
+        let x = Math.random() * (window.innerWidth - size);
+        let y = Math.random() * (window.innerHeight - size);
+
+        // Velocidad aleatoria (positivo o negativo para moverse en cualquier dirección)
+        let dx = (Math.random() - 0.5) * 4; // Movimiento horizontal aleatorio
+        let dy = (Math.random() - 0.5) * 4; // Movimiento vertical aleatorio
+
+        heart.style.left = `${x}px`;
+        heart.style.top = `${y}px`;
+
+        function moveHeart() {
+            x += dx;
+            y += dy;
+
+            // Rebote al llegar al borde izquierdo
+            if (x <= 0) {
+                x = 0; // Ajustar la posición al borde izquierdo
+                dx = Math.abs(dx); // Cambiar la dirección a la derecha
+            }
+
+            // Rebote al llegar al borde derecho
+            if (x + size >= window.innerWidth) {
+                x = window.innerWidth - size; // Ajustar la posición al borde derecho
+                dx = -Math.abs(dx); // Cambiar la dirección a la izquierda
+            }
+
+            // Rebote al llegar al borde superior
+            if (y <= 0) {
+                y = 0; // Ajustar la posición al borde superior
+                dy = Math.abs(dy); // Cambiar la dirección hacia abajo
+            }
+
+            // Rebote al llegar al borde inferior
+            if (y + size >= window.innerHeight) {
+                y = window.innerHeight - size; // Ajustar la posición al borde inferior
+                dy = -Math.abs(dy); // Cambiar la dirección hacia arriba
+            }
+
+            // Establecer la nueva posición de los corazones
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+
+            requestAnimationFrame(moveHeart); // Continuar el movimiento
+        }
+
+        moveHeart(); // Inicia el movimiento de los corazones
+    }
+}
+
+
+
+
+
+
+
 
 function refreshBanner() {
     // Reload banner gif to force load  
