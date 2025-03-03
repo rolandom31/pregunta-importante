@@ -20,8 +20,8 @@ const answers_no = {
     ]
 };
 
-answers_yes = {
-    "spanish": "Yes"
+const answers_yes = {
+    spanish:[ "ok ya te estabas tardando","tgp","bueno", "ok esta bien"]
 }
 
 let language = "spanish"; // Default language is English
@@ -49,15 +49,14 @@ no_button.addEventListener('click', () => {
     // change button text
     if (i < total - 1) {
         no_button.innerHTML = answers_no[language][i];
+        
+        if(i<=3){
+            yes_button.innerHTML = answers_yes[language][i];
+        }else{yes_button.innerHTML = answers_yes[language][3];}
         i++;
     } else if (i === total - 1) {
         alert(answers_no[language][i]);
-        i = 1;
-        no_button.innerHTML = answers_no[language][0];
-        yes_button.innerHTML = answers_yes[language];
-        yes_button.style.height = "50px";
-        yes_button.style.width = "50px";
-        size = 50;
+        location.reload(); 
     }
 });
 
@@ -151,15 +150,6 @@ function changeLanguage() {
     const selectedLanguage = selectElement.value;
     language = selectedLanguage;
 
-    // Update question heading
-    const questionHeading = document.getElementById("question-heading");
-    if (language === "french") {
-        questionHeading.textContent = "Tu veux être mon valentin?";
-    } else if (language === "thai") {
-        questionHeading.textContent = "คืนดีกับเราได้อ่ะป่าว?";
-    } else {
-        questionHeading.textContent = "Will you be my valentine?";
-    }
 
     // Reset yes button text
     yes_button.innerHTML = answers_yes[language];

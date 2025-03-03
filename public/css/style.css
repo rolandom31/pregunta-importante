@@ -1,6 +1,11 @@
 body {
     height: 100vh; /* Ensure it covers the full viewport height */
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, white);
+    background: linear-gradient(135deg, 
+        #fa9aff 0%,    /* Color base */
+        #fcc6ff 33%,   /* Primer paso intermedio */
+        #fed2ff 66%,   /* Segundo paso intermedio */
+        #ffffff 100%   /* Blanco final */
+    );
     background-size: cover;
     background-attachment: fixed;
     font-family: Arial, sans-serif;
@@ -32,6 +37,7 @@ body {
     margin-top: 10px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    border-radius: 5px; 
     p {
         margin: 0;
         object-fit: contain;
@@ -42,12 +48,12 @@ body {
     margin: 0 10px;
     color: white;
     border: none;
-    background-color: rgb(84, 159, 189);
+    background-color: rgb(89, 173, 114);
     cursor: pointer;
     height: 40px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    border-radius: 20px; 
+    border-radius: 5px; 
     p {
         margin: 0;
         object-fit: contain;
