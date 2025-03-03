@@ -34,6 +34,8 @@ body {
     p {
         margin: 0;
         object-fit: contain;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
     }
 }
 
@@ -48,6 +50,8 @@ body {
     p {
         margin: 0;
         object-fit: contain;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
     }
 }
 #question-heading {
