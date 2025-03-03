@@ -1,9 +1,10 @@
 body {
     height: 100vh; /* Ensure it covers the full viewport height */
-    background: linear-gradient(135deg, 
-        #fa9aff 0%,    /* Color base */
+    background: linear-gradient(180deg, 
+        #fa9aff 0%,   
+        #f69bfa 10%,    /* Color base */
         #fcc6ff 33%,   /* Primer paso intermedio */
-        #fed2ff 66%,   /* Segundo paso intermedio */
+        #fed2ff 90%,   /* Segundo paso intermedio */
         #ffffff 100%   /* Blanco final */
     );
     background-size: cover;
