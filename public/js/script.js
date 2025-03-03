@@ -12,11 +12,12 @@ const answers_no = {
         "bueno ya ponle que si",
         "se me estan acabando las opciones",
         "ya no se que poner aqui",
+        "lo hice con mis propias manos ahi dice abajito",
         "deja de picarle aqui",
         "carajo",
         "es en el verde, esta gigante miralo",
         "ok ahora si despues de esta ya rip",
-        "bueno se intentó"
+        "bueno se intentó 😾"
     ]
 };
 
