@@ -138,13 +138,6 @@ function startHeartsAnimation() {
     }
 }
 
-
-
-
-
-
-
-
 function refreshBanner() {
     // Reload banner gif to force load  
     let banner = document.getElementById('banner');
