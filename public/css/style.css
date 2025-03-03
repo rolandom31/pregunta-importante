@@ -30,12 +30,11 @@ body {
     border: none;
     cursor: pointer;
     margin-top: 10px;
-
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     p {
         margin: 0;
         object-fit: contain;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
     }
 }
 
@@ -43,15 +42,15 @@ body {
     margin: 0 10px;
     color: white;
     border: none;
-    background-color: green;
+    background-color: rgb(84, 159, 189);
     cursor: pointer;
     height: 40px;
-
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 20px; 
     p {
         margin: 0;
         object-fit: contain;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
     }
 }
 #question-heading {
