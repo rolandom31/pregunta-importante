@@ -60,6 +60,41 @@ body {
         object-fit: contain;
     }
 }
+#submit-password {
+    margin: 0 10px;
+    color: white;
+    border: none;
+    background-color: rgb(89, 104, 173);
+    cursor: pointer;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 5px; 
+    p {
+        margin: 0;
+        object-fit: contain;
+    }
+}
+#submit-password:hover {
+    background-color: rgb(59, 69, 114); /* Oscurece al pasar el mouse */
+}
+#password-screen {
+    display: flex;
+    flex-direction: column; /* Apila elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    text-align: center; /* Centra el texto */
+}
+
+#password-input {
+    margin: 10px 0; /* Espacio arriba y abajo */
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #ccc;
+    text-align: center;
+}
 #question-heading {
     font-family: 'Chewy', cursive;
 }

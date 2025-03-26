@@ -9,22 +9,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    
   </head>
   <body>
-    <div class="container">
-      <div id="hearts-container"></div>
-      <div class="banner-gif">
-        <img id="banner" src="./public/images/mid.gif" alt="banner" />
-      </div>
-      <h1 id="question-heading">Quieres ser mi novia?</h1>
-      <div class="buttons">
-        <button id="yes-button"><p>ok ya te estabas tardando</p></button>
-        <button id="no-button"><p>orita no grcs</p></button>
-      </div>
-      <div class="message">
-        <h2 id="success-message">wujuuuu</h2>
+    <div id="password-screen">
+      <h2>Ciudad que visitaste cuando empezamos a hablar:</h2>
+      <input type="text" id="password-input" placeholder="Ontabas?" />
+      <button id="submit-password">Enviar</button>
+    </div>
+  
+    <div id="main-content" style="display: none;">
+      <div class="container">
+        <div id="hearts-container"></div>
+        <div class="banner-gif">
+          <img id="banner" src="./public/images/mid.gif" alt="banner" />
+        </div>
+        <h1 id="question-heading">Quieres ser mi novia?</h1>
+        <div class="buttons">
+          <button id="yes-button"><p>ok ya te estabas tardando</p></button>
+          <button id="no-button"><p>orita no grcs</p></button>
+        </div>
+        <div class="message">
+          <h2 id="success-message">wujuuuu</h2>
+        </div>
+        <h5>hecho con mis propias manitas - Ro 🫰🏼</h5>
       </div>
       
     </div>
-    <h5>hecho con mis propias manitas - Ro 🫰🏼</h5>
+  
     <script src="./public/js/script.js"></script>
+    <script>
+      document.getElementById("submit-password").addEventListener("click", function () {
+          let password = document.getElementById("password-input").value.toLowerCase();
+          if (password === "londres" || password === "london") { 
+              document.getElementById("password-screen").style.display = "none";
+              document.getElementById("main-content").style.display = "block";
+          } else {
+              alert("Incorrect password, try again!");
+          }
+      });
+  
+      // Detectar "Enter" y simular clic en el botón
+      document.getElementById("password-input").addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {  
+              event.preventDefault();  
+              document.getElementById("submit-password").click(); 
+          }
+      });
+  </script>
+  
   </body>
+  
 </html>
